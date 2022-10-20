@@ -3,9 +3,7 @@
 @section('content')
 
 <script>
-  var d1 = '{{ $d1 }}';
-  var d2 = '{{ $d2 }}';
-  var d3 = '{{ $d3 }}';
+  var d1 = '{{ $d1 }}'; d2 = '{{ $d2 }}'; d3 = '{{ $d3 }}';
 </script>
 
 <h1 class="text-center my-3">Formulario {{ $form }}</h1>
