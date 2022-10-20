@@ -1,0 +1,52 @@
+
+/* TAGS */
+/* -------------------- -------------------- -------------------- */
+/* footer */
+/* footer{
+    background-color: #0d6efd;
+} */
+/* -------------------- */
+
+/* header */
+header{
+    background-image: url('../assets/imgs/header.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100px;
+}
+header div .btn{
+    border-radius: unset;
+}
+#title{
+    transform: scale(3);
+}
+/* -------------------- */
+/* -------------------- -------------------- -------------------- */
+
+
+
+/* TEMPLATE */
+/* -------------------- -------------------- -------------------- */
+/* class */
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hover:hover{
+    transform: scale(0.97);
+    opacity: 0.8;
+}
+/* -------------------- */
+/* -------------------- -------------------- -------------------- */
+
+
+
+/* PAGES */
+/* -------------------- -------------------- -------------------- */
+/* home */
+/* #forms-list p{
+    margin-top: unset;
+} */
+/* -------------------- */
+/* -------------------- -------------------- -------------------- */
