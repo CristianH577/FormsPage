@@ -26,3 +26,5 @@ Route::get('locale/{locale}', function ($locale) {
 });
 
 Route::get('/request', [HomeController::class, 'request'])->name('request');
+
+Route::post('/request', [HomeController::class, 'send'])->name('send');

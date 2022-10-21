@@ -18,23 +18,27 @@
 </head>
 
 <body class="min-vh-100 d-flex flex-column">
-  <header class="center shadow">
-    <div>
-      <a href="{{ url('/') }}" class="text-decoration-none text-white">
-        <i id="title" class="bi bi-boombox center"><p class="my-0 mx-1">@lang('app.header-title')</p></i>
-      </a>
+  <div id="background-header">
+    <header class="center shadow">
+      <div>
+        <a href="{{ url('/') }}" class="text-decoration-none text-white">
+          <!-- <i class="bi bi-boombox center fs-1 hoverUp"> -->
+            <p class="my-0 mx-1">@lang('app.header-title')</p>
+          <!-- </i> -->
+        </a>
 
-      <div class="position-fixed top-0 end-0 mx-2">
-        <button type="button" class="btn btn-outline-info rounded-bottom border-top-0" data-bs-toggle="dropdown" aria-expanded="false">
-        <i class="bi bi-globe"></i>
-        </button>
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="{{ url('locale/en') }}">En</a></li>
-          <li><a class="dropdown-item" href="{{ url('locale/es') }}">Es</a></li>
-        </ul>
+        <div class="position-absolute top-0 end-0 mx-2">
+          <button type="button" class="btn btn-outline-info rounded-0 rounded-bottom border-top-0" data-bs-toggle="dropdown" aria-expanded="false">
+          <!-- <i class="bi bi-globe"></i> -->
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="{{ url('locale/en') }}">En</a></li>
+            <li><a class="dropdown-item" href="{{ url('locale/es') }}">Es</a></li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </header>
+    </header>
+  </div>
 
   <main class="container mb-5">
     @yield('content')
@@ -42,21 +46,22 @@
 
   <footer class="py-3 mt-auto border-top">
     <ul class="nav justify-content-center border-bottom pb-3 mb-3 mx-5">
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Features</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Pricing</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted hoverUp">Home</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted hoverUp">Features</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted hoverUp">Pricing</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted hoverUp">FAQs</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted hoverUp">About</a></li>
     </ul>
 
-    <div class="d-flex flex-wrap justify-content-between align-items-center py-1">
+    <div class="d-flex flex-wrap justify-content-center justify-content-sm-between align-items-center py-1">
       <div class="col-md-4 d-flex align-items-center mx-3">
-        <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1 fs-5"><i class="bi bi-arrow-through-heart"></i>
+        <a href="/" class="text-muted mx-1 fs-5">
+          <!-- <i class="bi bi-arrow-through-heart"></i> -->
         </a>
-        <span class="mb-3 mb-md-0 text-muted">© 2022 Company, Inc</span>
+        <span class="text-muted">© 2022 Company, Inc</span>
       </div>
 
-      <ul class="col-md-4 d-flex justify-content-end list-unstyled mb-0">
+      <!-- <ul class="col-md-4 d-flex justify-content-end list-unstyled mb-0">
         <li class="mx-2">
           <a class="text-muted fs-5" href="#">
             <i class="bi bi-whatsapp"></i>
@@ -74,10 +79,9 @@
             <i class="bi bi-instagram"></i>
           </a>
         </li>
-      </ul>
+      </ul> -->
     </div>
   </footer>
 
-  <script src="js/app.js"></script>
 </body>
 </html>

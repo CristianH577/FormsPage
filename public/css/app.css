@@ -1,24 +1,15 @@
 
 /* TAGS */
 /* -------------------- -------------------- -------------------- */
-/* footer */
-/* footer{
-    background-color: #0d6efd;
-} */
-/* -------------------- */
-
 /* header */
 header{
+    height: 100px;
+    backdrop-filter: blur(2px);
+}
+#background-header{
     background-image: url('../assets/imgs/header.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100px;
-}
-header div .btn{
-    border-radius: unset;
-}
-#title{
-    transform: scale(3);
 }
 /* -------------------- */
 /* -------------------- -------------------- -------------------- */
@@ -37,6 +28,9 @@ header div .btn{
     transform: scale(0.97);
     opacity: 0.8;
 }
+.hoverUp:hover{
+    transform: scale(1.1) !important;
+}
 /* -------------------- */
 /* -------------------- -------------------- -------------------- */
 
@@ -45,8 +39,15 @@ header div .btn{
 /* PAGES */
 /* -------------------- -------------------- -------------------- */
 /* home */
-/* #forms-list p{
-    margin-top: unset;
-} */
+#formSelect > div{
+    transform: rotateY(90deg);
+    transition: transform 1s;
+}
+/* -------------------- */
+/* request */
+#form-request > ul .hidden{
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    transition: clip-path .5s ease-in;
+}
 /* -------------------- */
 /* -------------------- -------------------- -------------------- */
