@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang=@lang('app.lang')>
 
 <head>
   <meta charset="UTF-8">
@@ -46,22 +45,21 @@
 
   <footer class="py-3 mt-auto border-top">
     <ul class="nav justify-content-center border-bottom pb-3 mb-3 mx-5">
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted hoverUp">Home</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted hoverUp">Features</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted hoverUp">Pricing</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted hoverUp">FAQs</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted hoverUp">About</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted hoverUp">@lang('app.footer-links-1')</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted hoverUp">@lang('app.footer-links-2')</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted hoverUp">@lang('app.footer-links-3')</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted hoverUp">@lang('app.footer-links-4')</a></li>
     </ul>
 
     <div class="d-flex flex-wrap justify-content-center justify-content-sm-between align-items-center py-1">
       <div class="col-md-4 d-flex align-items-center mx-3">
         <a href="/" class="text-muted mx-1 fs-5">
-          <!-- <i class="bi bi-arrow-through-heart"></i> -->
+          <i class="bi bi-arrow-through-heart"></i>
         </a>
-        <span class="text-muted">© 2022 Company, Inc</span>
+        <span class="text-muted">© 2022 @lang('app.footer-register')</span>
       </div>
 
-      <!-- <ul class="col-md-4 d-flex justify-content-end list-unstyled mb-0">
+      <ul class="col-md-4 d-flex justify-content-end list-unstyled mb-0">
         <li class="mx-2">
           <a class="text-muted fs-5" href="#">
             <i class="bi bi-whatsapp"></i>
@@ -79,7 +77,7 @@
             <i class="bi bi-instagram"></i>
           </a>
         </li>
-      </ul> -->
+      </ul>
     </div>
   </footer>
 

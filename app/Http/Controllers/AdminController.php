@@ -18,25 +18,27 @@ class AdminController extends Controller
         $results = 10;
 
         $parameters = $request->all();
-        // unset($parameters['_token']);
         unset($parameters['page']);
 
         $b = 0;
-        foreach ($parameters as $parameter => $value) { 
-            if ($value !== null) {
+        foreach ($parameters as $parameter) { 
+            if ($parameter !== null) {
                 $b++;
             }
         }
 
-        // dd($b);
+        if (!array_key_exists('searchID', $parameters)) $parameters['searchID'] = null;
+        if (!array_key_exists('form', $parameters)) $parameters['form'] = null;
+        if (!array_key_exists('mode', $parameters)) $parameters['mode'] = null;
+        if (!array_key_exists('submode', $parameters)) $parameters['submode'] = null;
+
         if ($b > 1) {
             $solicitudes = Solicitude::searchID($parameters['searchID'])->form($parameters['form'])->mode($parameters['mode'])->submode($parameters['submode'])->paginate($results);
         }else{
             $solicitudes = Solicitude::paginate($results);
         }
 
-        return view('admin.index', [ 'solicitudes' => $solicitudes]);
-        // 'parameters' => $parameters,
+        return view('admin.index', ['parameters' => $parameters, 'solicitudes' => $solicitudes]);
     }
 
     /**
@@ -105,6 +107,6 @@ class AdminController extends Controller
         $solicitude = Solicitude::find($id);
         $solicitude->delete();
 
-        return redirect()->route('admin')->with('success', 'Solicitud eliminada');
+        return redirect()->route('admin')->with('success', $id);
     }
 }
