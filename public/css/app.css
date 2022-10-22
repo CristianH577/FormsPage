@@ -38,6 +38,15 @@ header{
 
 /* PAGES */
 /* -------------------- -------------------- -------------------- */
+/* admin */
+#solicitudesList > li ul li{
+    background: transparent !important;
+}
+#solicitudesList > .col-12 ul:hover{
+    background-color: #0d6dfd56;
+    border: 1px solid #0d6dfd;
+}
+/* -------------------- */
 /* home */
 #formSelect > div{
     transform: rotateY(90deg);

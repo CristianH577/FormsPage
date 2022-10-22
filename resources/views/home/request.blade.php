@@ -11,11 +11,15 @@
 <form action="{{ route('send') }}" method="POST" id="form-request" class="row g-3 d-flex justify-content-center needs-validation" novalidate>
   @csrf
 
+  @error('data1Select1')
+    <div class="alert alert-danger">{{ $message }}</div>
+  @enderror
+
   <input type="hidden" name="form" value="{{ $form }}">
   <input type="hidden" name="mode" value="{{ $mode }}">
   <input type="hidden" name="submode" value="{{ $submode }}">
 
-  <ul id="data1" class="row g-3 {{ $d1 }} justify-content-center list-unstyled">
+  <ul id="data1" class="row g-3 {{$d1}} justify-content-center list-unstyled">
     <h2 class="text-center my-3">Modo</h2>
 
     <li class="col-12 mb-2 position-relative">
@@ -64,32 +68,6 @@
         <div class="form-floating">
           <input type="text" name="data1Part1Date1Year" class="form-control" id="data1Part1Date1Year" placeholder="text">
           <label for="data1Part1Date1Year">Año</label>
-        </div>
-      </div>
-      
-      <div class="col-12 mb-2">
-        <label for="data1Part1Select1" class="form-label">Select</label>
-        <select class="form-select" name="data1Part1Select1" id="data1Part1Select1" >
-          <option value=""></option>
-          <option value="1">One</option>
-          <option value="2">Two</option>
-        </select>
-
-        <div class="invalid-feedback">
-          Selecciona.
-        </div>
-      </div>
-      
-      <div class="col-12 mb-2">
-        <label for="data1Part1Input2"><i class="bi bi-2-circle"></i> Label</label>
-        <input type="text" name="data1Part1Input2" class="form-control p-3" id="data1Part1Input2" placeholder="Label" >
-
-        <div class="invalid-feedback">
-          Complete.
-        </div>
-
-        <div id="data1Part1Input2-HelpBlock" class="form-text">
-          Text.
         </div>
       </div>
     </li>
@@ -148,32 +126,6 @@
         <div class="form-floating">
           <input type="text" name="data2Part1Date1Year" class="form-control" id="data2Part1Date1Year" placeholder="text">
           <label for="data2Part1Date1Year">Año</label>
-        </div>
-      </div>
-      
-      <div class="col-12 mb-2">
-        <label for="data2Part1Select1" class="form-label">Select*</label>
-        <select class="form-select" name="data2Part1Select1" id="data2Part1Select1" required>
-          <option value=""></option>
-          <option value="1">One</option>
-          <option value="2">Two</option>
-        </select>
-
-        <div class="invalid-feedback">
-          Selecciona.
-        </div>
-      </div>
-      
-      <div class="col-12 mb-2">
-        <label for="data2Part1Input2"><i class="bi bi-2-circle"></i> Label*</label>
-        <input type="text" name="data2Part1Input2" class="form-control p-3" id="data2Part1Input2" placeholder="Label" required>
-
-        <div class="invalid-feedback">
-          Complete.
-        </div>
-
-        <div id="data2Part1Input2-HelpBlock" class="form-text">
-          Text.
         </div>
       </div>
     </li>

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-// use App\Models\Home;
+use App\Models\Solicitude;
 
 class HomeController extends Controller
 {
@@ -30,15 +30,23 @@ class HomeController extends Controller
     }
 
     public function send(Request $request){
+        if ($request->mode == 1) {
+            $request->validate([
+                'data1Select1' => 'required',
+                'data1Part1Input1' => 'required'
+            ]);
+        }
+        if ($request->submode == 1) {
+            $request->validate([
+                'data2Select1' => 'required',
+                'data2Part1Input1' => 'required',
+            ]);
+        }
         $request->validate([
-            'data1Select1' => 'required',
-            'data1Part1Input1' => 'required',
+            'form' => 'required',
+            'mode' => 'required',
+            'submode' => 'required',
 
-            'data2Select1' => 'required',
-            'data2Part1Input1' => 'required',
-            'data2Part1Select1' => 'required',
-            'data2Part1Input2' => 'required',
-            
             'data3Input1' => 'required',
             'data3Select1' => 'required',
             'data3Input2' => 'required'
@@ -47,28 +55,48 @@ class HomeController extends Controller
         $data1Part1Date1 = $request->data1Part1Date1Day . '/' . $request->data1Part1Date1Month . '/' . $request->data1Part1Date1Year;
         $data2Part1Date1 = $request->data2Part1Date1Day . '/' . $request->data2Part1Date1Month . '/' . $request->data2Part1Date1Year;
 
-        $rq = new Request();
-        $request->form = $request->form;
-        $request->mode = $request->mode;
-        $request->submode = $request->submode;
+        $solicitude = new Solicitude();
+        $solicitude->form = $request->form;
+        $solicitude->mode = $request->mode;
+        $solicitude->submode = $request->submode;
 
-        $request->data1Select1 = $request->data1Select1;
-        $request->data1Part1Input1 = $request->data1Part1Input1;
-        $request->data1Part1Date1 = $data1Part1Date1;
-        $request->data1Part1Select1 = $request->data1Part1Select1;
-        $request->data1Part1Input2 = $request->data1Part1Input2;
+        $solicitude->data1Select1 = $request->data1Select1;
+        $solicitude->data1Part1Input1 = $request->data1Part1Input1;
+        $solicitude->data1Part1Date1 = $data1Part1Date1;
 
-        $request->data2Select1 = $request->data2Select1;
-        $request->data2Part1Input1 = $request->data2Part1Input1;
-        $request->data2Part1Date1 = $data2Part1Date1;
-        $request->data2Part1Select1 = $request->data2Part1Select1;
-        $request->data2Part1Input2 = $request->data2Part1Input2;
+        $solicitude->data2Select1 = $request->data2Select1;
+        $solicitude->data2Part1Input1 = $request->data2Part1Input1;
+        $solicitude->data2Part1Date1 = $data2Part1Date1;
 
-        $request->data3Input1 = $request->data3Input1;
-        $request->data3Select1 = $request->data3Select1;
-        $request->data3Input2 = $request->data3Input2;
+        $solicitude->data3Input1 = $request->data3Input1;
+        $solicitude->data3Select1 = $request->data3Select1;
+        $solicitude->data3Input2 = $request->data3Input2;
 
-        dd($request);
+        $solicitude->save();
+
+        $save = Solicitude::latest('id')->first();
+        $id = $save->id;
+
+        $message = "Solicitud enviada. N° de solicitud: #$id"; 
+
+        return redirect()->route('home')->with('success', $message);
+    }
+
+    public function search(Request $request){
+        $id = $request->searchID;
+        
+        if ($id == null) {
+            $id = "";
+            $solicitude = "";
+        }
+        else{
+            $solicitude = Solicitude::find($id);
+        }
+
+        return view('home.search', ['id' => $id, 'solicitude' => $solicitude]);
+        // return view('home.search', []);
+
+        // dd($request);
     }
 
 }

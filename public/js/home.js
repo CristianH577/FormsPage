@@ -5,10 +5,11 @@ const back = document.querySelectorAll('#formSelect > div .back');
 window.onload = choice[0].style.cssText = 'transform: rotateY(0);';
 
 for (let i = 0; i < choice.length; i++) {
-  choiceB[i] = choice[i].querySelectorAll('div div button');
+  choiceB[i] = choice[i].querySelectorAll('.formB');
 
   if (i != choice.length-1) {
     choiceB[i].forEach(element => {
+      // element.style.display = 'none';
       element.onclick = function () {
         element.querySelector('input').checked = 'true';
         choice[i].style.transform = 'rotateY(90deg)';

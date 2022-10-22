@@ -20,12 +20,13 @@ for (let i = 0; i < next.length; i++) {
     if (formRequest.checkValidity()) {
       formRequest.classList.remove('was-validated');
       data[i].style.display = 'none';
-      StatusInputs(i+1, false);
   
       if (modes[i+1] == '1') {
+        StatusInputs(i+1, false);
         data[i+1].classList.remove('d-none');
         data[i+1].style.display = 'flex';
       }else{
+        StatusInputs(2, false);
         data[2].classList.remove('d-none');
         data[2].style.display = 'flex';
       }

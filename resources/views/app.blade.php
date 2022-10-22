@@ -22,14 +22,14 @@
     <header class="center shadow">
       <div>
         <a href="{{ url('/') }}" class="text-decoration-none text-white">
-          <!-- <i class="bi bi-boombox center fs-1 hoverUp"> -->
+          <i class="bi bi-boombox center fs-1 hoverUp">
             <p class="my-0 mx-1">@lang('app.header-title')</p>
-          <!-- </i> -->
+          </i>
         </a>
 
         <div class="position-absolute top-0 end-0 mx-2">
           <button type="button" class="btn btn-outline-info rounded-0 rounded-bottom border-top-0" data-bs-toggle="dropdown" aria-expanded="false">
-          <!-- <i class="bi bi-globe"></i> -->
+          <i class="bi bi-globe"></i>
           </button>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="{{ url('locale/en') }}">En</a></li>

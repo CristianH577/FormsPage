@@ -4,6 +4,10 @@
 
 <form action="{{ route('request') }}" method="GET" name="formSelect" id="formSelect">
   @csrf
+
+  @if (session('success'))
+    <h6 class="alert alert-success">{{ session('success') }}</h6>
+  @endif
   
   <div>
     <h1 class="text-center my-3">@lang('content.home-title')</h1>
@@ -11,7 +15,7 @@
     <div class="container text-center">
       <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-1 g-sm-2 g-lg-4 justify-content-center">
 
-        <button type="button" class="btn btn-link p-0">
+        <button type="button" class="btn btn-link p-0 formB">
           <input class="form-check-input d-none" type="radio" name="form" value="1" id="form1">
           <label for="form1" class="btn shadow hover w-100">
             <div class="p-3 bg-light rounded">
@@ -24,7 +28,7 @@
           </label>
         </button>
 
-        <button type="button" class="btn btn-link p-0">
+        <button type="button" class="btn btn-link p-0 formB">
           <input class="form-check-input d-none" type="radio" name="form" value="2" id="form2">
           <label for="form2" class="btn shadow hover w-100">
             <div class="p-3 bg-light rounded">
@@ -37,7 +41,7 @@
           </label>
         </button>
           
-        <button type="button" class="btn btn-link p-0">
+        <button type="button" class="btn btn-link p-0 formB">
           <input class="form-check-input d-none" type="radio" name="form" value="3" id="form3">
           <label for="form3" class="btn shadow hover w-100">
             <div class="p-3 bg-light rounded">
@@ -50,7 +54,7 @@
           </label>
         </button>
           
-        <button type="button" class="btn btn-link p-0">
+        <button type="button" class="btn btn-link p-0 formB">
           <input class="form-check-input d-none" type="radio" name="form" value="4" id="form4">
           <label for="form4" class="btn shadow hover w-100">
             <div class="p-3 bg-light rounded">
@@ -61,6 +65,17 @@
               <h3 class="mt-4">Formulario 4</h3>
             </div>
           </label>
+        </button>
+        
+        <button type="button" class="btn btn-link p-0">
+          <a href="{{ route('search') }}" class="btn shadow hover w-100">
+            <div class="p-3 bg-light rounded">
+              <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="currentColor" class="bi bi-1-circle" viewBox="0 0 16 16">
+                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+              </svg>
+              <h3 class="mt-4">Buscar</h3>
+            </div>
+          </a>
         </button>
 
       </div>
@@ -76,7 +91,7 @@
     <div class="container text-center">
       <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-1 g-sm-2 g-lg-4 justify-content-center">
 
-        <button type="button" class="btn btn-link p-0">
+        <button type="button" class="btn btn-link p-0 formB">
           <input class="form-check-input d-none" type="radio" name="mode" value="1" id="mode1">
           <label for="mode1" class="btn shadow hover w-100">
             <div class="p-3 bg-light rounded">
@@ -89,7 +104,7 @@
           </label>
         </button>
 
-        <button type="button" class="btn btn-link p-0">
+        <button type="button" class="btn btn-link p-0 formB">
           <input class="form-check-input d-none" type="radio" name="mode" value="2" id="mode2">
           <label for="mode2" class="btn shadow hover w-100">
             <div class="p-3 bg-light rounded">
@@ -115,7 +130,7 @@
     <div class="container text-center">
       <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-1 g-sm-2 g-lg-4 justify-content-center">
 
-        <button type="button" class="btn btn-link p-0">
+        <button type="button" class="btn btn-link p-0 formB">
           <input class="form-check-input d-none" type="radio" name="submode" value="1" id="submode1">
           <label for="submode1" class="btn shadow hover w-100">
             <div class="p-3 bg-light rounded">
@@ -128,7 +143,7 @@
           </label>
         </button>
 
-        <button type="button" class="btn btn-link p-0">
+        <button type="button" class="btn btn-link p-0 formB">
           <input class="form-check-input d-none" type="radio" name="submode" value="2" id="submode2">
           <label for="submode2" class="btn shadow hover w-100">
             <div class="p-3 bg-light rounded">
