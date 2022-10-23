@@ -60,3 +60,33 @@ header{
 }
 /* -------------------- */
 /* -------------------- -------------------- -------------------- */
+
+
+
+/* MEDIA */
+/* -------------------- -------------------- -------------------- */
+@media screen and (max-width: 576PX) {
+    #solicitudesList .list-group .list-group-item::before{
+        font-weight: bold;
+        display: inline-block;
+        width: 50%;
+        word-break: break-all;
+        border-right: var(--bs-list-group-border-width) solid var(--bs-list-group-border-color);
+    }
+    #solicitudesList .list-group .list-group-item:nth-child(1):before{
+        content: attr(lang) "";
+    }
+    #solicitudesList .list-group .list-group-item:nth-child(2):before{
+        content: attr(lang) "";
+    }
+    #solicitudesList .list-group .list-group-item:nth-child(3):before{
+        content: attr(lang) "";
+    }
+    #solicitudesList .list-group .list-group-item:nth-child(4):before{
+        content: attr(lang) "";
+    }
+    #solicitudesList .list-group .list-group-item:nth-child(5):before{
+        content: attr(lang) "";
+    }
+}
+/* -------------------- -------------------- -------------------- */

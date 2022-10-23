@@ -39,7 +39,7 @@
       </label>
         
       <div class="row">
-        <div class="col-12 col-sm-4">
+        <div class="col-12 col-sm-4 mb-2">
           <div class="form-floating">
             <input type="text" name="rqFormDate1Day" class="form-control" id="rqFormDate1Day" placeholder="@lang('content.rqForm-rqFormDate1Day-placeholder')" value="@if (isset($solicitude)) {{$solicitude->rqFormDate1Day}} @endif">
             <label for="rqFormDate1Day">
@@ -48,7 +48,7 @@
           </div>
         </div>
 
-        <div class="col-12 col-sm-4">
+        <div class="col-12 col-sm-4 mb-2">
           <div class="form-floating">
             <input type="text" name="rqFormDate1Month" class="form-control" id="rqFormDate1Month" placeholder="@lang('content.rqForm-rqFormDate1Month-placeholder')" value="@if (isset($solicitude)) {{$solicitude->rqFormDate1Month}} @endif">
             <label for="rqFormDate1Month">
@@ -57,7 +57,7 @@
           </div>
         </div>
 
-        <div class="col-12 col-sm-4">
+        <div class="col-12 col-sm-4 mb-2">
           <div class="form-floating">
             <input type="text" name="rqFormDate1Year" class="form-control" id="rqFormDate1Year" placeholder="@lang('content.rqForm-rqFormDate1Year-placeholder')" value="@if (isset($solicitude)) {{$solicitude->rqFormDate1Year}} @endif">
             <label for="rqFormDate1Year">

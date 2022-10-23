@@ -16,7 +16,7 @@
     <h1 class="text-center my-3">@lang('content.home-title1')</h1>
 
     <div class="container text-center">
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-1 g-sm-2 g-lg-4 justify-content-center">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-1 g-sm-2 g-lg-4 justify-content-center">
 
         <button type="button" class="btn btn-link p-0 formB">
           <input class="form-check-input d-none" type="radio" name="form" value="1" id="form1">

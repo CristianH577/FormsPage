@@ -110,6 +110,7 @@ return [
 
     'admin-list-title1' => 'ID',
     'admin-list-title2' => 'Formulario',
-    'admin-list-title3' => 'Modo-Submodo',
-    'admin-list-title4' => 'Fecha de envio',
+    'admin-list-title3' => 'Modo',
+    'admin-list-title4' => 'Submodo',
+    'admin-list-title5' => 'Fecha de envio',
 ];

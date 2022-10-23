@@ -39,7 +39,7 @@
     </header>
   </div>
 
-  <main class="container mb-5">
+  <main class="container mb-5 col-lg-8 col-xl-6">
     @yield('content')
   </main>
 
