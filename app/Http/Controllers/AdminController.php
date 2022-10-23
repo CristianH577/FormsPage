@@ -15,7 +15,7 @@ class AdminController extends Controller
     public function index(Request $request)
     {
         // dd($request->all());
-        $results = 10;
+        $results = 5;
 
         $parameters = $request->all();
         unset($parameters['page']);
